@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jordan graphics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <img src="logo.jpg" alt="Jordan graphics">
+        <span>Jordan graphics</span>
+      </div>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="designs.html">designs</a>
+        <a href="contact.html"class="active">Contact us</a>
+      </nav>
+    </div>
+    <div class="banner">
+       Providing professional computer assistance both in hardware and software application.
+    </div>
+  </header>
+
+<main class="container">
+  <h1>Contact Us</h1>
+  
+  <div class="contact-grid">
+    <section class="form-box">
+      <h2>Send a Message</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="jordanahimbisibwe160@gmail.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="I would like to order..." required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p id="formStatus"></p>
+    </section>
+
+    <section class="info-box">
+      <h2>Company Contact</h2>
+      <p><strong>Email:</strong> jordanahimbisibwe160@gmail.com</p>
+      <p><strong>Tel:</strong> +256 764282688</p>
+      <p><strong>Address:</strong> Ibanda, Western Uganda</p>
+      <p><strong>Hours:</strong> Monday - Saturday, 8:00am - 6:00pm</p>
+      
+      <a href="https://wa.me/256764282688" class="btn" target="_blank">Chat on WhatsApp</a>
+      <a href="mailto: jordanahimbisibwe160@gmail.com" class="btn-outline">Send Email</a>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Jordan graphics- All Rights Reserved</p>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const msg = document.getElementById('message').value;
+  document.getElementById('formStatus').textContent = `Thanks ${name}! Message received.`;
+  document.getElementById('formStatus').style.color = "#22c55e";
+  // Open WhatsApp with message
+  window.open(`https://wa.me/256764282688?text=Hello Jordan, I'm ${name}. ${msg}`,'_blank');
+  this.reset();
+});
+</script>
+</body>
+</html>
