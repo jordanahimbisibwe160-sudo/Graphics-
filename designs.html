@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse Jordan graphics' design services - flyers, posters, logos, photography and more.">
   <title>Jordan graphics</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,59 +11,64 @@
   <header>
     <div class="container header-content">
       <div class="logo">
-        <img src="logo (1).jpg" alt="Jordan graphics">
-        <span>Jordan graphics</span>
+        <img src="logo.jpg" alt="Jordan graphics logo">
+        <span style="color: black;">Jordan graphics</span>
       </div>
       <nav class="navbar">
         <a href="index.html">Home</a>
-        <a href="designs.html"class="active">designs</a>
+        <a href="designs.html" class="active">Designs</a>
         <a href="contact.html">Contact us</a>
       </nav>
     </div>
     <div class="banner">
-         Providing professional computer assistance both in hardware and software application.
+      Providing professional computer assistance both in hardware and software application.
     </div>
   </header>
 
-<main class="container">
-  <h1>OUR DESIGNS</h1>
-  <p id="cart">Cart: 0 items | Total: UGX 0</p>
+  <main class="container">
+    <h1>OUR DESIGNS</h1>
+    <p id="cart">Cart: 0 items | Total: UGX 0</p>
+<div class="container">
+    <div class="">
+      <div class="card"><img src="birthday.png" alt="Birthday flyer design"><h3>Birthday flyers</h3><p>UGX 15,000</p><button class="btn add">Request design</button></div>
+    </div>
+    <div class="grid">
+      <div class="card"><img src="photo.jpg" alt="Event photography sample"><h3>Photography</h3><p>UGX 3,000</p><button class="btn add">Request design</button></div>
+      <div class="card"><img src="cat.jpg" alt="Election campaign poster"><h3>Election posters</h3><p>UGX 30,000</p><button class="btn add">Request design</button></div>
+      <div class="card"><img src="golden.jpg" alt="Logo design sample"><h3>Logo design</h3><p>UGX 15,000</p><button class="btn add">Request design</button></div>
+      <div class="card"><img src="vote.jpg" alt="Photoshop branding design"><h3>Photoshop</h3><p>UGX 10,000</p><button class="btn add">Request design</button></div>
+    </div>
+</div>
+    <div class="actions">
+      <button id="clear">Clear request</button>
+      <button id="order" class="btn">Order on WhatsApp</button>
+    </div>
+  </main>
 
-  <div class="grid">
-    <div class="card"><img src="birthday (1).png" alt="flyers"><h3>birthday flyers</h3><p>UGX 15,000</p><button class="btn add">Request design</button></div>
-    <div class="card"><img src="group (1).jpg" alt="photography"><h3>skilling</h3><p>UGX 20,000</p><button class="btn add">Request design</button></div>
-    <div class="card"><img src="photo (1).jpg" alt="photography"><h3>photography</h3><p>UGX 3,000</p><button class="btn add">Request design</button></div>
-    <div class="card"><img src="cat (1).jpg" alt="poster"><h3>election posters</h3><p>UGX 30,000</p><button class="btn add">Request design</button></div>
-    <div class="card"><img src="golden (1).jpg" alt="logo"><h3>logo design</h3><p>UGX 15,000</p><button class="btn add">Request design</button></div>
-    <div class="card"><img src="vote (1).jpg" alt="Photoshop"><h3>Photoshop</h3><p>UGX 10,000</p><button class="btn add">Request design</button></div>
-  </div>
+  <footer>
+    <p>&copy; 2026 Jordan graphics | jordanahimbisibwe160@gmail.com | +256 764282688 | Ibanda</p>
+  </footer>
 
-  <div class="actions">
-    <button id="clear">Clear request</button>
-    <button id="order" class="btn">Order on WhatsApp</button>
-  </div>
-</main>
-
-<footer>
-  <p>&copy; 2026 Jordan graphics| jordanahimbisibwe160@gmail.com | +256 764282688 | Ibanda</p>
-</footer>
-
-<script>
-let total=0,count=0;
-document.querySelectorAll('.add').forEach(b=>{
- b.onclick=()=>{
-  const price=parseInt(b.previousElementSibling.textContent.replace(/[^0-9]/g,''));
-  count++; total+=price;
-  document.getElementById('cart').textContent=`Cart: ${count} items | Total: UGX ${total.toLocaleString()}`;
-  b.textContent='Added ✓';
-  setTimeout(()=>b.textContent='Added to request',800);
- }
-});
-document.getElementById('clear').onclick=()=>{count=0;total=0;document.getElementById('cart').textContent='Cart: 0 items | Total: UGX 0';}
-document.getElementById('order').onclick=()=>{
- if(count==0) return alert('Cart empty');
- window.open(`https://wa.me/256764282688?text=Hello Jordan, I want ${count} designs Total UGX ${total}`,'_blank');
-}
-</script>
+  <script>
+    let total = 0, count = 0;
+    document.querySelectorAll('.add').forEach(b => {
+      b.onclick = () => {
+        const price = parseInt(b.previousElementSibling.textContent.replace(/[^0-9]/g, ''));
+        count++; total += price;
+        document.getElementById('cart').textContent = `Cart: ${count} items | Total: UGX ${total.toLocaleString()}`;
+        b.textContent = 'Added ✓';
+        setTimeout(() => b.textContent = 'Request design', 800);
+      };
+    });
+    document.getElementById('clear').onclick = () => {
+      count = 0; total = 0;
+      document.getElementById('cart').textContent = 'Cart: 0 items | Total: UGX 0';
+    };
+    document.getElementById('order').onclick = () => {
+      if (count == 0) return alert('Cart empty');
+      window.open(`https://wa.me/256764282688?text=Hello Jordan, I want ${count} designs Total UGX ${total}`, '_blank');
+    };
+  </script>
 </body>
 </html>
+
